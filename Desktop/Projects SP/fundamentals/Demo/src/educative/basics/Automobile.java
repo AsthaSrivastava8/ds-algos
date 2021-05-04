@@ -1,0 +1,58 @@
+package educative.basics;
+
+// Base Class Vehicle
+class Vehicle {
+
+    // Private Fields
+    private String make;
+    private String color;
+    private int year;
+    private String model;
+
+
+    // Parameterized Constructor
+    public Vehicle(String make, String color, int year, String model) {
+        this.make = make;
+        this.color = color;
+        this.year = year;
+        this.model = model;
+    }
+
+    // public method to print details
+    public void printDetails() {
+        System.out.println("Manufacturer: " + make);
+        System.out.println("Color: " + color);
+        System.out.println("Year: " + year);
+        System.out.println("Model: " + model);
+    }
+
+}
+
+// Derived Class Car
+class Car extends Vehicle {
+
+    // Private field
+    private String bodyStyle;
+
+    // Parameterized Constructor
+    public Car(String make, String color, int year, String model, String bodyStyle) {
+        super(make, color, year, model);  //calling parent class constructor
+        this.bodyStyle = bodyStyle;
+    }
+
+    public void carDetails() {  //details of car
+        printDetails();         //calling method from parent class
+        System.out.println("Body Style: " + bodyStyle);
+    }
+
+}
+
+class Automobile {
+
+    public static void main(String[] args) {
+        Car sedan = new Car("Hyundai", "Red", 2019, "Elantra", "Sedan"); //creation of car Object
+        sedan.carDetails(); //calling method to print details
+        sedan.printDetails();
+    }
+
+}
