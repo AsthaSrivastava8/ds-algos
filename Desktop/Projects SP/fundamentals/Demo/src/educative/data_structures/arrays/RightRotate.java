@@ -11,7 +11,7 @@ public class RightRotate {
             int temp = nextLoop;
             nextLoop = arr[i + 1];
             arr[i + 1] = temp;
-+        }
+        }
         arr[0] = nextLoop;
 
         Arrays.stream(arr).forEach(System.out::println);
